@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Abdullah Al Mamun">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Include & require Practice | PHP Learn</title>
+    <title>Include & require Practice | PHP Learn with A-Al-Mamun</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
