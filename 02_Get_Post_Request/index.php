@@ -20,11 +20,18 @@
 </style>
 <body>
     <!-- <form action="show.php" method="get"> -->
-    <form action="show.php" method="post">
+    <!-- <form action="show.php" method="post"> -->
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
         <h1>Information Collect</h1>
         <input type="text" name="name" placeholder="Enter Name"><br>
         <input type="email" name="email" placeholder="Enter Email"><br>
         <input type="submit" name="submit" value="Submit">
     </form>
+    <?php 
+        if (isset($_POST['submit'])) {
+            echo 'Name :'. $_POST['name'] .'<br>';
+            echo 'Email :'. $_POST['email'] .'<br>';
+        }
+    ?>
 </body>
 </html>

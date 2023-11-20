@@ -1,4 +1,6 @@
 <?php
+// git commit -m "Get, POST, and REquest Paractice"
+
     // echo "<pre>";
     //     print_r ($_GET);
     // echo "</pre>";
@@ -19,4 +21,15 @@
 
     echo $_REQUEST['name'] . '<br>';
     echo $_REQUEST['email'];
+
+    // Also Practice in $_SERVER
+
+    echo "<pre>";
+        print_r ($_SERVER);
+    echo "</pre>";
+
+
+    echo $_SERVER['MIBDIRS'];
+
+
 ?>
