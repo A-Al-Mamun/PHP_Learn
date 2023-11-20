@@ -3,20 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Include & requere Practice | PHP Learn</title>
+    <title>Include & require Practice | PHP Learn</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <!-- Header Section Start -->
-    <header>
-        <h1>Header Section</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <?php include_once 'header.php' ?>
+    <?php /*require_once 'header.php'*/ ?>
     <!-- Header Section End -->
 
     <!-- Main Section Start -->
@@ -37,9 +30,7 @@
     <!-- Main Section End -->
 
     <!-- Footer SEction Start -->
-    <footer>
-        <h1>Footer Section</h1>
-    </footer>
+    <?php include 'footer.php' ?>
     <!-- Footer SEction End -->
 </body>
 </html>
