@@ -27,6 +27,7 @@
         <input type="email" name="email" placeholder="Enter Email"><br>
         <input type="submit" name="submit" value="Submit">
     </form>
+    
     <?php 
         if (isset($_POST['submit'])) {
             echo 'Name :'. $_POST['name'] .'<br>';
