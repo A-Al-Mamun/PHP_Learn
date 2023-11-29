@@ -1,4 +1,5 @@
 <?php 
+session_start();
 ?>
 <html lang="en">
 <head>
@@ -18,6 +19,7 @@
     <!-- Main Section Start -->
     <main>
         <h1>Main Section</h1>
+        <p></p>
     </main>
     <!-- Main Section End -->
     <script src="./assets/js/main.js"></script>

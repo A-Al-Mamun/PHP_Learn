@@ -1,5 +1,3 @@
- <?php
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +21,17 @@
             </nav>
             <div class="header-btn">
                 <div class="log">
-                    <a href="#">Log In</a>
-                    <div class="login">
-                        <form action="" method="post">
-                            <input type="email" name="email" placeholder="Email">
-                            <input type="password" name="pass" placeholder="PassWord">
-                            <input type="submit" name="log" value="Log In">
-                        </form>
-                    </div>
+                    <a href="http://localhost/PHP_Learn/05_Project_1/Pages/login.php" target="-blank">
+                        <?php if(isset($_SESSION['User'])){
+                            echo $_SESSION['User'] . "<br>";
+
+                            $logout = '<a href="http://localhost/PHP_Learn/05_Project_1/Pages/logout.php" target="_blank">Logout</a>';
+                            echo $logout;
+
+                        }else
+                            echo "Log In";
+                        ?>
+                    </a>
                 </div>
             </div>
         </div>
