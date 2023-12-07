@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{}
+main{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+.main-menu{
+    margin-bottom: 20px;
+}
+.main-menu a{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.emp-table{
+    display: block;
+}
+.emp-table table{
+    
+}
+.emp-table table thead{
+    background: blueviolet;
+}
+.emp-table table thead td{
+    color: #fff;
+    padding: 10px 20px;
+} 
+
+
+
+.pro-table{
+    display: none;
+}
+.pro-table table{
+    
+}
+.pro-table table thead{
+    background: rgb(43, 226, 104);
+}
+.pro-table table thead td{
+    color: #fff;
+    padding: 10px 20px;
+} 
