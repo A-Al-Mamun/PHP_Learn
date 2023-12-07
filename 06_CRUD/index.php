@@ -16,6 +16,11 @@
 
 </head>
 <body>
+    <!-- Header Section Start -->
+    <header>
+        <?php include_once("./assets/pages/header.php") ?>
+    </header>
+    <!-- Header Section End -->
     <!-- Main Section Start -->
     <main>
         <div class="main-menu">
@@ -30,6 +35,7 @@
                 $empResult = mysqli_query($conn, $empSql) or die("Database Failed");
 
                 if (mysqli_num_rows($empResult) > 0) {
+                    
             ?>
             <table>
                 <thead>
@@ -42,18 +48,25 @@
                     <td>Phone</td>
                     <td>Action</td>
                 </thead>
+                <?php 
+                    while ($empRow = mysqli_fetch_assoc($empResult)) {
+                ?>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $empRow['eid'] ?></td>
+                        <td><?php echo $empRow['ename'] ?></td>
+                        <td><?php echo $empRow['eemail'] ?></td>
+                        <td><?php echo $empRow['eadd'] ?></td>
+                        <td><?php echo $empRow['edob'] ?></td>
+                        <td><?php echo $empRow['egender'] ?></td>
+                        <td><?php echo $empRow['ephone'] ?></td>
+                        <td>
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </td>
                     </tr>
                 </tbody>
+                <?php } ?>
             </table>
             <?php
                 }else{
@@ -69,6 +82,7 @@
                  $proResult = mysqli_query($conn, $proSql) or die("Database Failed");
 
                  if (mysqli_num_rows($proResult) > 0) {
+                    while ($proRow = mysqli_fetch_assoc($proResult)) {
             ?>
             <table>
                 <thead>
@@ -81,16 +95,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $proRow['product_id'] ?></td>
+                        <td><?php echo $proRow['product_name'] ?></td>
+                        <td><?php echo $proRow['details'] ?></td>
+                        <td><?php echo $proRow['price'] ?></td>
+                        <td><?php echo $proRow['image'] ?></td>
+                        <td>
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            <?php
+            <?php 
+                    }
                 }else{
                     echo "Products has't record";
                 } 
