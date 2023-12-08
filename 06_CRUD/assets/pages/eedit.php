@@ -46,29 +46,28 @@
                 <label for="#">Email :</label>
                 <input type="email" name="eemail" value="<?php echo $empRow['eemail'] ?>"><br>
                 <label for="#">Address :</label>
-                <input type="text" name="eadd" value="<?php echo $empRow['eadd'] ?>"><br>
+                <input type="text" name="eaddress" value="<?php echo $empRow['eadd'] ?>"><br>
                 <label for="#">Date of Birth :</label>
                 <input type="date" name="edob" value="<?php echo $empRow['edob'] ?>"><br><br>
                 <label for="#">Gender :</label>
                 <?php
-                    $genderSql = "SELECT * FROM emp_tbl";
-                    $genderResult = mysqli_query($conn, $empSql) or die("Query Failed");
+                    // $genderSql = "SELECT * FROM emp_tbl";
+                    // $genderResult = mysqli_query($conn, $genderSql) or die("Query Failed");
 
-                    if (mysqli_num_rows($genderResult) > 0) {
-                        echo '<select name="egender">';
-                            while ($genRow = mysqli_fetch_assoc($genderResult)) {
-                                // if($empRow['egender'] == $genRow['egender']){
-                                //     $select = 'selected';
-                                // }else{
-                                //     $select = '';
-                                // }
-                                // echo "<option value=''>{$genRow['egender']}</option>";
-                                echo "<option value=''>{$genRow['egender']}</option>";
-                            }
-                        echo '</select><br><br>';
-                    }
+                    // if (mysqli_num_rows($genderResult) > 0) {
+                    //     echo '<select name="">';
+                    //         while ($genRow = mysqli_fetch_assoc($genderResult)) {
+                                
+                    //             echo "<option value=''>{$genRow['egender']}</option>";
+                    //         }
+                    //     echo '</select><br><br>';
+                    // }
                     
                 ?>
+                <select name="egender" id="">
+                    <option value=""><?php echo $empRow['egender'] ?></option>
+                    <!-- <option value="">Female</option> -->
+                </select><br><br>
                 <label for="#">Phone :</label>
                 <input type="number" name="ephone" value="<?php echo $empRow['ephone'] ?>"><br>
                 <input type="submit" value="Add" name="eadd">

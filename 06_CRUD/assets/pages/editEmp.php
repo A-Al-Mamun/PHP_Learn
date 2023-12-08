@@ -4,7 +4,7 @@
     $eid = $_POST["eid"];
     $ename = $_POST["ename"];
     $eemail = $_POST["eemail"];
-    $eadd = $_POST["eadd"];
+    $eadd = $_POST["eaddress"];
     $edob = $_POST["edob"];
     $egender = $_POST["egender"];
     $ephone = $_POST["ephone"];
