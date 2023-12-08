@@ -63,8 +63,8 @@
                         <td><?php echo $empRow['egender'] ?></td>
                         <td><?php echo $empRow['ephone'] ?></td>
                         <td>
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
+                            <a href="./assets/pages/eedit.php?empid=<?php echo $empRow['eid']; ?>">Edit</a>
+                            <a href="./assets/pages/empDelete.php?empid=<?php echo $empRow['eid']; ?>">Delete</a>
                         </td>
                     </tr>
                 </tbody>
@@ -107,8 +107,8 @@
                             <img src="./assets/images/<?php echo $proRow['image'] ?>">
                         </td>
                         <td>
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
+                            <a href="./assets/pages/pedit.php?pro_id=<?php echo $proRow['product_id']; ?>">Edit</a>
+                            <a href="./assets/pages/proDelete.php?pro_id=<?php echo $proRow['product_id']; ?>">Delete</a>
                         </td>
                     </tr>
                 </tbody>

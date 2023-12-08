@@ -19,10 +19,10 @@
         
         // Get all the submitted data from the form
 
-        $proSql = "INSERT INTO product_images(product_id,image)  VALUES('{$pid}','{$filename}') ";
+        $imgSql = "UPDATE product_images SET product_id = '{$pid}',image = '{$filename}' WHERE product_id = {$pid}";
     
         // Execute query
-        $proResult = mysqli_query($conn, $proSql) or die("Query Failed");
+        $imgResult = mysqli_query($conn, $imgSql) or die("Query Failed");
     
         // Now let's move the uploaded image into the folder: image
         if (move_uploaded_file($tempname, $folder)) {
@@ -32,11 +32,11 @@
         }
     }
 
-    $sql = "INSERT INTO products(pid,product_name,details,price) VALUES('{$pid}','{$pname}','{$pdetail}','{$pprice}')";
+    $proSql = "UPDATE products SET product_name = '{$pname}', details = '{$pdetail}', price = '{$pprice}' WHERE p_id == {$pid}";
 
-    $result = mysqli_query($conn, $sql) or die("Query Failed");
+    $proResult = mysqli_query($conn, $proSql) or die("Query Failed");
 
     header("Location: http://localhost/PHP_Learn/06_CRUD/index.php");
+
     mysqli_close($conn);
-    
 ?>
