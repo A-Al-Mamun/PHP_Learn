@@ -33,7 +33,7 @@
             <?php
                 include_once ('./assets/pages/db.php');
 
-                $empSql  = "SELECT * FROM emp_tbl";
+                $empSql  = "SELECT * FROM emp_tbl JOIN gender_tbl WHERE emp_tbl.egender = gender_tbl.gen_id";
                 $empResult = mysqli_query($conn, $empSql) or die("Database Failed");
 
                 if (mysqli_num_rows($empResult) > 0) {
@@ -60,7 +60,7 @@
                         <td><?php echo $empRow['eemail'] ?></td>
                         <td><?php echo $empRow['eadd'] ?></td>
                         <td><?php echo $empRow['edob'] ?></td>
-                        <td><?php echo $empRow['egender'] ?></td>
+                        <td><?php echo $empRow['gen_name'] ?></td>
                         <td><?php echo $empRow['ephone'] ?></td>
                         <td>
                             <a href="./assets/pages/eedit.php?empid=<?php echo $empRow['eid']; ?>">Edit</a>

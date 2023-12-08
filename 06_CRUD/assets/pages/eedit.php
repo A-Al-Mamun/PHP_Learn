@@ -30,7 +30,7 @@
             <h3>Editing Employee Info: </h3>
             <?php 
                 //Db Connection
-               include_once("db.php"); 
+               include_once("./db.php"); 
 
                $eid = $_GET['empid'];
                $empSql = "SELECT * FROM emp_tbl WHERE eid = {$eid}";
@@ -51,21 +51,25 @@
                 <input type="date" name="edob" value="<?php echo $empRow['edob'] ?>"><br><br>
                 <label for="#">Gender :</label>
                 <?php
-                    // $genderSql = "SELECT * FROM emp_tbl";
-                    // $genderResult = mysqli_query($conn, $genderSql) or die("Query Failed");
+                    $genderSql = "SELECT * FROM gender_tbl";
+                    $genderResult = mysqli_query($conn, $genderSql) or die("Query Failed");
 
-                    // if (mysqli_num_rows($genderResult) > 0) {
-                    //     echo '<select name="">';
-                    //         while ($genRow = mysqli_fetch_assoc($genderResult)) {
-                                
-                    //             echo "<option value=''>{$genRow['egender']}</option>";
-                    //         }
-                    //     echo '</select><br><br>';
-                    // }
+                    if (mysqli_num_rows($genderResult) > 0) {
+                        echo '<select name="egender">';
+                            while ($genRow = mysqli_fetch_assoc($genderResult)) {
+                                if($empRow['egender'] == $genRow['gen_id']){
+                                    $select = 'selected';
+                                } else {
+                                    $select = '';
+                                }
+                                echo "<option {$select} value='{$genRow['gen_id']}'>{$genRow['gen_name']}</option>";
+                            }
+                        echo '</select><br><br>';
+                    }
                     
                 ?>
-                <select name="egender" id="">
-                    <option value=""><?php echo $empRow['egender'] ?></option>
+                <!-- <select name="egender" id=""> -->
+                    <!-- <option value=""><php echo $empRow['egender'] ?></option> -->
                     <!-- <option value="">Female</option> -->
                 </select><br><br>
                 <label for="#">Phone :</label>

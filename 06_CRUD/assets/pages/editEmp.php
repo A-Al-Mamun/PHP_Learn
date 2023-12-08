@@ -4,12 +4,12 @@
     $eid = $_POST["eid"];
     $ename = $_POST["ename"];
     $eemail = $_POST["eemail"];
-    $eadd = $_POST["eaddress"];
+    $eaddress = $_POST["eaddress"];
     $edob = $_POST["edob"];
     $egender = $_POST["egender"];
     $ephone = $_POST["ephone"];
 
-    $empSql = "UPDATE emp_tbl SET ename = '{$ename}', eemail = '{$eemail}', eadd = '{$eadd}', edob = '{$edob}', egender = '{$egender}', ephone = '{$ephone}' WHERE eid = {$eid}";
+    $empSql = "UPDATE emp_tbl SET ename = '{$ename}', eemail = '{$eemail}', eadd = '{$eaddress}', edob = '{$edob}', egender = '{$egender}', ephone = '{$ephone}' WHERE eid = {$eid}";
 
     $empResult = mysqli_query($conn, $empSql) or die("Query Failed");
 

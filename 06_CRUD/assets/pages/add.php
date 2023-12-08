@@ -38,14 +38,25 @@
                 <label for="#">Email :</label>
                 <input type="email" name="eemail" id=""><br>
                 <label for="#">Address :</label>
-                <input type="text" name="eadd" id=""><br>
+                <input type="text" name="eaddress" id=""><br>
                 <label for="#">Date of Birth :</label>
                 <input type="date" name="edob" id=""><br><br>
                 <label for="#">Gender :</label>
                 <select name="egender" id="">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="" selected disabled>Select Gender</option>
+                    <?php
+                        include_once("./db.php");
+                        $genderSql = "SELECT * FROM gender_tbl";
+                        $genderResult = mysqli_query($conn, $genderSql) or die("Query Failed");
+
+                        while ($genRow = mysqli_fetch_assoc($genderResult)) {
+                    ?>
+                        <option value="<?php echo $genRow['gen_id']; ?>"><?php echo $genRow['gen_name']; ?></option>
+                    
+                    <?php } ?>
+    
                 </select><br><br>
+                
                 <label for="#">Phone :</label>
                 <input type="number" name="ephone" id=""><br>
                 <input type="submit" value="Add" name="eadd">

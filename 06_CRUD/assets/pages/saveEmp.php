@@ -3,12 +3,12 @@
     
     $ename = $_POST["ename"];
     $eemail = $_POST["eemail"];
-    $eadd = $_POST["eadd"];
+    $eaddress = $_POST["eaddress"];
     $edob = $_POST["edob"];
     $egender = $_POST["egender"];
     $ephone = $_POST["ephone"];
 
-    $empSql = "INSERT INTO emp_tbl(ename,eemail,eadd,edob,egender,ephone) VALUES('{$ename}','{$eemail}','{$eadd}','{$edob}','{$egender}','{$ephone}')";
+    $empSql = "INSERT INTO emp_tbl(ename,eemail,eadd,edob,egender,ephone) VALUES('{$ename}','{$eemail}','{$eaddress}','{$edob}','{$egender}','{$ephone}')";
 
     $empResult = mysqli_query($conn, $empSql) or die("Query Failed");
 
