@@ -9,9 +9,11 @@ emp.addEventListener('click', () => {
     if(empTable.style.display == 'none'){
         empTable.style.display = 'block';
         emp.style.textDecoration = 'underline';
+        alert("Active");
     }else{
         empTable.style.display = 'none';
         emp.style.textDecoration = 'none';
+        alert("Deactive");
     }
 })
 

@@ -18,7 +18,9 @@
 <body>
     <!-- Header Section Start -->
     <header>
-        <?php include_once("./assets/pages/header.php") ?>
+        <?php 
+            include_once("./assets/pages/header.php") 
+        ?>
     </header>
     <!-- Header Section End -->
     <!-- Main Section Start -->
@@ -82,7 +84,6 @@
                  $proResult = mysqli_query($conn, $proSql) or die("Database Failed");
 
                  if (mysqli_num_rows($proResult) > 0) {
-                    while ($proRow = mysqli_fetch_assoc($proResult)) {
             ?>
             <table>
                 <thead>
@@ -93,22 +94,29 @@
                     <td>Image</td>
                     <td>Action</td>
                 </thead>
+                <?php 
+                    while ($proRow = mysqli_fetch_assoc($proResult)) {
+                ?>
                 <tbody>
                     <tr>
                         <td><?php echo $proRow['product_id'] ?></td>
                         <td><?php echo $proRow['product_name'] ?></td>
                         <td><?php echo $proRow['details'] ?></td>
                         <td><?php echo $proRow['price'] ?></td>
-                        <td><?php echo $proRow['image'] ?></td>
+                        <td>
+                            <img src="./assets/images/<?php echo $proRow['image'] ?>">
+                        </td>
                         <td>
                             <a href="#">Edit</a>
                             <a href="#">Delete</a>
                         </td>
                     </tr>
                 </tbody>
+                <?php
+                    }
+                ?>
             </table>
             <?php 
-                    }
                 }else{
                     echo "Products has't record";
                 } 
